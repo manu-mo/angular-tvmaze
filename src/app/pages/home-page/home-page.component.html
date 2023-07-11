@@ -1,0 +1,13 @@
+<div class="input-group m-3">
+    <input type="text" class="form-control" name="drinkName" [(ngModel)]="name" placeholder="Search cocktails by name"
+        aria-label="Search cocktails by name" aria-describedby="button-addon2">
+    <!-- <button class="btn btn-primary" type="button" id="drinkName" (click)="searchByName(name)">Search</button> -->
+    <button type="button" [routerLink]="['/home', name]" >Search</button>
+</div>
+
+<ul class="list-group col-sm-12 col-md-4 col-lg-3 my-2" *ngFor="let el of shows">
+    <a routerLink="/detail/{{el.show.id}}">
+        <img src="{{el.show.image.medium}}" alt="">
+        <p>{{el.show.name}}</p>
+    </a>
+</ul>
